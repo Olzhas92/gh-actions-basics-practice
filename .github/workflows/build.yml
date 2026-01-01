@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-      - name: Install packages
+      - name: Get Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install packages
+        run: npm ci
       - name: Run lint
         run: npm run lint
   test:
@@ -20,10 +22,12 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-      - name: Install packages
+      - name: Get Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install packages
+        run: npm ci
       - name: Run tests
         run: npm run test
   build:
@@ -32,10 +36,12 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-      - name: Install packages
+      - name: Get Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install packages
+        run: npm ci
       - name: Run build
         run: npm run build
   deploy:
